@@ -68,7 +68,7 @@ section div a {
 }
 
 section div ol {
-    list-style-type: decimal;
+    /*list-style-type: decimal;*/
 }
 
 section div li {

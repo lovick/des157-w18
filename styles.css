@@ -29,10 +29,11 @@ h2 {
     height: 250px;
     background-color: #39a0ed;
     margin: 0 auto;
-    padding-top: 165px;
-    padding-left: 20px;
-    border-radius: 15px;
+    /*padding-top: 165px;
+    padding-left: 20px;*/
     margin-bottom: 10px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 section {

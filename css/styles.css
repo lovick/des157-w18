@@ -68,10 +68,6 @@ section div a {
     text-decoration: none;
 }
 
-section div ol {
-    /*list-style-type: decimal;*/
-}
-
 section div li {
     background-color: #39a0ed;
     height: 50px;

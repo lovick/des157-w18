@@ -73,6 +73,7 @@ section div li {
     height: 50px;
     padding: 15px;
     border-radius: 20px;
+    margin-bottom: 5px;
 }
 
 section div:first-of-type li:hover {
@@ -81,6 +82,37 @@ section div:first-of-type li:hover {
 
 section div:last-of-type li:hover {
     background-color: #4c6085;
+}
+
+section article {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #224870;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+section article img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+section article h2 {
+    margin-bottom: 10px;
+}
+
+section article p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+} 
+
+section article a {
+    color: #39a0ed;
+    text-decoration: none;
+}
+
+section article a:hover {
+    color: #4C6085;
 }
 
 @media screen and (max-width: 800px) {

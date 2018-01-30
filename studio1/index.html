@@ -1,0 +1,40 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <Title>Mad Libs</Title>
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body class="monsterHunter background">
+        <nav>
+            <ul>
+                <li><a href="" onclick="return restartForm()">Reset</a></li>
+                <li>
+                    <form name="typeForm" onsubmit="return changeTheme()">
+                        <select name="type">
+                            <option value="monsterHunter">Monster Hunter</option>
+                            <option value="pizza">Pizza</option>
+                            <option value="zelda">Zelda</option>
+                        </select>
+                        <input type="submit" name="submit" value="Change category!">
+                    </form>
+                </li>
+            </ul>
+        </nav>
+
+        <section id="main" class="monsterHunter">
+            <h1>Monster Hunter Mad Libs</h1>
+            <button onclick="begin()">Begin</button>
+        </section>
+
+        <footer>
+            <ul>
+                <li><a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a></li>
+                <li><a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a></li>
+            </ul>
+        </footer>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>

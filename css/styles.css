@@ -97,6 +97,16 @@ section article img {
     margin-bottom: 20px;
 }
 
+.audience {
+    height: 100%;
+}
+
+.audience img {
+    float: left;
+    max-width: 50%;
+    padding-right: 10px;
+}
+
 section article h2 {
     margin-bottom: 10px;
 }

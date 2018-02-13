@@ -84,7 +84,7 @@ section div:last-of-type li:hover {
     background-color: #4c6085;
 }
 
-section article {
+.writeup {
     width: 800px;
     margin: 0 auto;
     background-color: #224870;
@@ -92,7 +92,7 @@ section article {
     border-radius: 20px;
 }
 
-section article img {
+.writeup img {
     max-width: 100%;
     margin-bottom: 20px;
 }
@@ -107,21 +107,21 @@ section article img {
     padding-right: 10px;
 }
 
-section article h2 {
+.writeup h2 {
     margin-bottom: 10px;
 }
 
-section article p {
+.writeup p {
     margin-bottom: 20px;
     line-height: 1.5;
 } 
 
-section article a {
+.writeup a {
     color: #39a0ed;
     text-decoration: none;
 }
 
-section article a:hover {
+.writeup a:hover {
     color: #4C6085;
 }
 

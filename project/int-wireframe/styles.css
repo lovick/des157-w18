@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 15% 520px 15%;
+    grid-gap: 10px;
+    grid-auto-rows: 150px minmax(100px, auto) 100px;
+}
+
+header {
+    grid-column: 1 / 4;
+    grid-row: 1;
+}
+
+section {
+    grid-row: 2;
+    grid-column: 2;
+    background-color: #00ff00;
+}
+
+section article {
+    display: inline-block;
+}
+
+section article h3 {
+    margin: 2px;
+}
+
+footer {
+    grid-row: 3;
+}
+
+.recipe {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.recipe article {
+    display: inline-block;
+    grid-column: 1;
+}
+
+.recipe aside {
+    display: inline-block;
+    grid-column: 2;
+}

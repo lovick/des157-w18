@@ -29,6 +29,21 @@ section article {
     display: inline-block;
 }
 
+section article a {
+    height: 170px;
+    width: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section article a img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
 section article h3 {
     margin: 2px;
 }

@@ -27,6 +27,7 @@ section {
 
 section article {
     display: inline-block;
+    overflow: hidden;
 }
 
 section article a {

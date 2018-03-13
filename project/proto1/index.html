@@ -12,63 +12,17 @@
 <body>
     <div id="container">
         <header>
-            <img src="images/logo.png">
+            <img id="logo" src="images/logo.png">
         </header>
-        <section>
-            <article>
-                <a class="foodLink" href="recpTemp.html">
-                    <img src="images/american.png">
-                </a>
-                <h3>American</h3>
-            </article>
-            <article>
-                <a class="foodLink" href="recpTemp.html">
-                    <img src="images/chinese.png">
-                </a>
-                <h3>Chinese</h3>
-            </article>
-            <article>
-                <a class="foodLink" href="recpTemp.html">
-                    <img src="images/filipino.png">
-                </a>
-                <h3>Filipino</h3>
-            </article>
-            <article>
-                <a class="foodLink" href="recpTemp.html">
-                    <img src="images/french.png">
-                </a>
-                <h3>French</h3>
-            </article>
-            <article>
-                <a class="foodLink" href="recpTemp.html">
-                    <img src="images/irish.png">
-                </a>
-                <h3>Irish</h3>
-            </article>
-            <article>
-                <a class="foodLink" href="recpTemp.html">
-                    <img src="images/italian.png">
-                </a>
-                <h3>Italian</h3>
-            </article>
-            <article>
-                <a class="foodLink" href="recpTemp.html">
-                    <img src="images/japanese.png">
-                </a>
-                <h3>Japanese</h3>
-            </article>
-            <article>
-                <a class="foodLink" href="recpTemp.html">
-                    <img src="images/mexican.png">
-                </a>
-                <h3>Mexican</h3>
-            </article>
-            <article>
-                <a class="foodLink" href="recpTemp.html">
-                    <img src="images/southafrican.png">
-                </a>
-                <h3>South African</h3>
-            </article>
+        <aside>
+            <h2>Filter</h2>
+            <p>Click a tag to filter</p>
+            <ul>
+                <li onclick="filter(recipes, 'vegetarian')">Vegetarian</li>
+            </ul>
+        </aside>
+        <section id="imgGrid">
+
         </section>
         <footer>
                 <a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a>

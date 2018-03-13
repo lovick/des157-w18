@@ -1,0 +1,158 @@
+/* Don't I wish I was using LESS or SASS
+#292F36 is background
+#224870 is back 1
+#4c6085 is back 2
+#39A0ed is item and header color
+#f7fff7 is text
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #292f36;
+    color: #f7fff7;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+#mySketch {
+    width: 800px;
+    height: 250px;
+    background-color: #39a0ed;
+    margin: 0 auto;
+    /*padding-top: 165px;
+    padding-left: 20px;*/
+    margin-bottom: 10px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+section {
+    padding-bottom: 20px;
+}
+
+section div {
+    float: left;
+    width: 50%;
+    background-color: #39a0ed;
+    padding: 20px;
+}
+
+section div:first-of-type {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #4c6085;
+}
+
+section div:last-of-type {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #224870;
+}
+
+section div h2 {
+    padding-bottom: 15px;
+}
+
+section div a {
+    color: #f7fff7;
+    text-decoration: none;
+}
+
+section div li {
+    background-color: #39a0ed;
+    height: 50px;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+section div:first-of-type li:hover {
+    background-color: #224870;
+}
+
+section div:last-of-type li:hover {
+    background-color: #4c6085;
+}
+
+.writeup {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #224870;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.writeup img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.audience {
+    height: 100%;
+}
+
+.audience img {
+    float: left;
+    max-width: 50%;
+    padding-right: 10px;
+}
+
+.writeup h2 {
+    margin-bottom: 10px;
+}
+
+.writeup p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+} 
+
+.writeup a {
+    color: #39a0ed;
+    text-decoration: none;
+}
+
+.writeup a:hover {
+    color: #4C6085;
+}
+
+@media screen and (max-width: 800px) {
+    #mySketch {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    section div {
+        border-radius: 15px;
+        width: 100%;
+    }       
+}
+
+footer {
+    clear: both;
+    margin: 0 auto;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+footer a {
+    margin-top: 20px;
+    text-decoration: none;
+    color: #f7fff7;
+}
+
+footer a:hover {
+    color: #4C6085;
+}

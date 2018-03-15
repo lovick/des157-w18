@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Prototype 1</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <img id="logo" src="images/logo.png">
+        </header>
+        <aside>
+            <h2>Filter</h2>
+            <p>Click a tag to filter</p>
+            <ul>
+                <li onclick="filter(recipes, 'vegetarian')">Vegetarian</li>
+            </ul>
+        </aside>
+        <section id="imgGrid">
+
+        </section>
+        <footer>
+                <a href="https://validator.w3.org/check?uri=referer">Valid HTML 5</a>
+                <a href="https://jigsaw.w3.org/css-validator/check/referer">Valid CSS</a>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

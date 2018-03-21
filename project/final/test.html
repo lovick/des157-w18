@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        function newPage() {
+            var stateObj = { foo: "bar" };
+            history.pushState(stateObj, "page 2", "bar.html");
+            document.getElementById('formBox').innerHTML = "second form";
+        }
+    </script>
+
+
+    <input type="button" onclick="newPage();" value="forward" />
+    <div id='formBox'>first form</div>
+</body>
+
+</html>

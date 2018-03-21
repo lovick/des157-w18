@@ -40,7 +40,6 @@ section {
 
 .imgGrid article {
     display: inline-block;
-    overflow: hidden;
     padding: 10px 10px;
     max-width: 190px;
     vertical-align: top;
@@ -99,4 +98,19 @@ footer {
 
 .recipe aside ul {
     padding: 0px 20px;
+}
+
+ul {
+    padding-left: 30px;
+    list-style: none;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #aaa;
 }

@@ -15,7 +15,7 @@
 
 function imgOver() {
     //console.log(this.children[0]);
-    this.style.border = "3px solid #00ff00";
+    this.style.border = "3px solid #000000";
 }
 
 function imgOff() {
@@ -32,7 +32,7 @@ function displayRecipe(arr, ind) {
     <img src="`+recipe["img"]+`" alt="`+arr["name"]+`">
     <article>
     <h2>`+recipe["name"]+`</h2>
-    <h4>An `+arr["name"]+` Recipe</h4>
+    <h4>A `+arr["name"]+` Recipe</h4>
     <ol>
     `;
 
@@ -65,8 +65,10 @@ function displayRecipe(arr, ind) {
     history.pushState(recipe["name"], null, window.location.href);
 }
 
+var tagHovers = [];
 function populateFilterList(arr) {
     var tagList = [];
+    tagHovers = [];
     for (var c in arr) {
         for (var t in arr[c]["tags"]) {
             if (tagList.indexOf(arr[c]["tags"][t]) < 0) {
@@ -74,6 +76,8 @@ function populateFilterList(arr) {
             }
         }
     }
+
+    tagList.sort();
     
     var list = document.getElementById("filtList");
     var outStr = `
@@ -83,9 +87,23 @@ function populateFilterList(arr) {
     `;
     for (var ind in tagList) {
         var t = tagList[ind];
-        outStr += `<li onclick="filter(recipes, '`+t+`')">`+t+`</li>`;
+        outStr += `<li class="tag" onclick="filter(recipes, '`+t+`')">`+t+`</li>`;
+    }
+    if (tagList.length == 0) {
+        outStr = "";
     }
     list.innerHTML = outStr;
+
+    var tags = document.getElementsByClassName("tag");
+    for (var i = 0; i < tags.length; i++) {
+        tagHovers[i] = anime({
+            targets: tags[i],
+            translateX: 20,
+            duration: 500,
+            autoplay: false
+        });
+        tags[i].addEventListener("click", tagHovers[i].play);
+    }
 }
 
 // for going another layer deeper
@@ -104,10 +122,43 @@ function filter(arr, tag) {
     populateHelp(filArr);
 }
 
+function preAnimate() {
+    var links = document.getElementsByClassName("foodLink");
+    if (links.length == 0) {
+        return false;
+    }
+    console.log(links);
+    for (var l in links) {
+        if (l == "length" || l == "item" || l == "namedItem") {
+            continue;
+        }
+        links[l].classList.add("old");
+    }
+
+    anime({
+        targets: ".old",
+        translateY: [
+            { value: 10, duration: 1000 }
+        ],
+        rotate: "1turn",
+        duration: 1000
+    });
+}
+
 function populate(arr, name) {
+    //preAnimate();
     populateHelp(arr);
     history.pushState(name, null, window.location.href);
     populateFilterList(arr);
+    /*anime({
+        targets: ".foodLink",
+        translateY: [
+            { value: 100, duration: 1200 },
+            { value: 0, duration: 800 }
+        ],
+        rotate: "1turn",
+        duration: 2000
+    });*/
 }
 
 // needed to split out because history was just being readded repeatedly
@@ -121,7 +172,7 @@ function populateHelp(arr) {
         }
         grid.innerHTML += `
         <article>
-            <a class="foodLink" onclick=`+arr[key]["onclick"]+`>
+            <a class="foodLink" onclick=`+arr[key]["onclick"]+` id="`+key+`">
                 <img src="`+arr[key]["img"]+`">
             </a>
             <h3>`+arr[key]["name"]+`</h3>
@@ -131,17 +182,36 @@ function populateHelp(arr) {
     addHovers();
 }
 
+var buttons;
+var hovers = [];
 function addHovers() {
-    var buttons = document.getElementsByClassName("foodLink");
+    buttons = document.getElementsByClassName("foodLink");
     for (var i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener("mouseover", imgOver);
-        buttons[i].addEventListener("mouseout", imgOff);
+        hovers[i] = anime({
+            targets: "#"+buttons[i].id,
+            scale: 1.1,
+            translateY: -5,
+            duration: 1000,
+            autoplay: false
+        });
+        buttons[i].addEventListener("mouseover", hovers[i].play);
+        buttons[i].addEventListener("mouseout", hovers[i].reverse);
     }
 }
 
 populate(recipes, "top");
 
-var logo = document.getElementById("logo").addEventListener("click", function() { populate(recipes, "top"); } );
+var logoAnim = anime({
+    targets: "#logo",
+    translateX: 10,
+    scale: 1.05,
+    duration: 1000,
+    autoplay: false
+});
+var logo = document.getElementById("logo");
+logo.addEventListener("click", function() { populate(recipes, "top"); });
+logo.addEventListener("mouseover", logoAnim.play);
+logo.addEventListener("mouseout", logoAnim.reverse);
 
 window.addEventListener('popstate', function(e) {
     console.log(e);
@@ -154,3 +224,13 @@ window.addEventListener('popstate', function(e) {
         populateFilterList(recipes[e.state]["recipes"]);
     }
 });
+
+/*anime({
+    targets: ".foodLink",
+    translateX: [
+        { value: 100, duration: 1200 },
+        { value: 0, duration: 800 }
+    ],
+    rotate: "1turn",
+    duration: 2000
+});*/
